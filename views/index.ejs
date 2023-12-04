@@ -6,6 +6,11 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div><% messages.map( (mes) => { %>
+      <h3><%= mes.user %></h3>
+      <p><%= mes.text %></p>
+      <p class="sent-info">sent: <%= mes.added %></p>
+    <% }) %></div>
+    <a href="/new">add message</a>
   </body>
 </html>
